@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import createBrowserHistory from 'history/createBrowserHistory'
 
-import ForecastPage from './routes/forecast/Page';
-import ForecastListPage from './routes/forecast-list/Page';
-import ProfilePage from './routes/profile/Page';
-import SettingsPage from './routes/settings/Page';
+import ForecastPage from './routes/ForecastPage';
+import ForecastListPage from './routes/ForecastListPage';
+import ProfileSettingsPage from './routes/ProfileSettingsPage';
+import SignInPage from './routes/SignInPage';
+import SignUpPage from './routes/SignUpPage';
+import SignOutPage from './routes/SignOutPage';
 import NoMatch from './routes/NoMatch';
 import NavigationBar from './components/NavigationBar';
 
@@ -22,8 +23,10 @@ class App extends Component {
             <Route exact path="/" component={ForecastListPage}/>
             <Route path="/forecast" component={ForecastPage}/>
             <Route path="/forecast-list" component={ForecastListPage}/>
-            <Route path="/settings" component={SettingsPage}/>
-            <Route path="/profile" component={ProfilePage}/>
+            <Route path="/settings" component={ProfileSettingsPage}/>
+            <Route path="/signin" component={SignInPage}/>
+            <Route path="/signup" component={SignUpPage}/>
+            <Route path="/signout" component={SignOutPage}/>
             <Route component={NoMatch}/>
           </Switch>
         </div>

@@ -3,29 +3,36 @@ import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import StarIcon from '@material-ui/icons/Star';
-import Button from '@material-ui/core/Button';
 
-
-import {Link} from 'react-router-dom';
-import { NavLink } from 'react-router-dom'
-
+import MenuItems from './MenuItems';
+import SearchInput from './SearchInput';
 
 const styles = {
+  icons: {
+    fontSize: '32px',
+  },
   list: {
     width: 250,
   },
   fullList: {
     width: 'auto',
+  },
+  root: {
+    flexGrow: 1,
+  },
+  flex: {
+    flex: 1,
+  },
+  menuButton: {
+    marginLeft: -12,
+    marginRight: 20,
+  },
+  textField: {
+    width: '100%',
   },
 };
 
@@ -38,52 +45,6 @@ class NavigationBar extends React.Component {
     this.setState({isMenuOpen: !this.state.isMenuOpen});
   };
 
-  menuItems() {
-    return (
-      <div className={styles.fullList}>
-        <List>
-
-          <ListItem button>
-            <ListItemIcon>
-              <StarIcon/>
-            </ListItemIcon>
-            <NavLink to="/forecast" >
-              <ListItemText primary="Forecast"/>
-            </NavLink>
-
-          </ListItem>
-
-          <ListItem button>
-            <ListItemIcon>
-              <Link to="/forecast-list">Forecast List</Link>
-            </ListItemIcon>
-          </ListItem>
-
-          <ListItem button>
-            <ListItemIcon>
-              <Link to="/settings">Settings</Link>
-            </ListItemIcon>
-          </ListItem>
-
-          <ListItem button>
-            <ListItemIcon>
-              <Link to="/profile">Profile</Link>
-            </ListItemIcon>
-          </ListItem>
-
-          <Divider/>
-
-          <ListItem button>
-            <ListItemIcon>
-              <Link to="/logout">Logout</Link>
-            </ListItemIcon>
-          </ListItem>
-
-        </List>
-      </div>
-    );
-  }
-
   render() {
     const classes = this.props.classes;
     return (
@@ -91,12 +52,9 @@ class NavigationBar extends React.Component {
         <AppBar position="static" color="default">
           <Toolbar>
             <IconButton className={classes.menuButton} color="inherit" aria-label="Menu" onClick={this.toggleMenu}>
-              <MenuIcon/>
+              <MenuIcon style={styles.icons}/>
             </IconButton>
-            <Typography variant="title" color="inherit" className={classes.flex}>
-              Title
-            </Typography>
-            <Button color="inherit">Login</Button>
+            <SearchInput styles={styles} />
           </Toolbar>
         </AppBar>
         <Drawer open={this.state.isMenuOpen} onClose={this.toggleMenu}>
@@ -107,7 +65,7 @@ class NavigationBar extends React.Component {
             onKeyDown={this.toggleMenu}
           >
             <div className={classes.list}>
-              {this.menuItems()}
+              <MenuItems styles={styles}/>
             </div>
           </div>
         </Drawer>

@@ -1,8 +1,21 @@
 import React from 'react';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
-class SIgnUpPage extends React.Component {
+const classes = {};
+
+class SignUpPage extends React.Component {
   render() {
-    return <h1>Settings Page</h1>
+    return (
+      <div>
+        <Paper className={classes.paper}>
+          <form noValidate autoComplete="off">
+
+          </form>
+        </Paper>
+      </div>
+    );
   }
 }
-export default SIgnUpPage;
+
+export default SignUpPage;

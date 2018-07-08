@@ -1,8 +1,22 @@
 import React from 'react';
+import WeatherApi from '../api/weatherApi';
 
 class ForecastPage extends React.Component {
+
+  state = {weatherData: {}};
+
+  componentDidMount() {
+    const weatherPromise = WeatherApi.byCityName('New York');
+    weatherPromise.then((data) => {
+      this.setState({weatherData: data});
+    });
+    window.weatherData = this.state.weatherData;
+  }
+
   render() {
-    return <h1>Forecast Page</h1>
+    return (
+      JSON.stringify(this.state)
+    );
   }
 }
 

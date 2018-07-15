@@ -1,0 +1,48 @@
+.container {
+    padding: 15px;
+    height: calc(100vh - 105px);
+    justify-content: space-evenly;
+}
+
+.location {
+    text-align: center;
+}
+
+.location > p {
+    font-size: .5em;
+}
+
+.location > h3 {
+    margin-bottom: 0;
+}
+
+.cardLayout {
+    display: flex;
+    padding: 20px;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 3rem;
+    justify-content: space-evenly;
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+    justify-items: center;
+    display: flex;
+}
+
+.row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+}
+
+.smallCard {
+    padding: 20px;
+}
+

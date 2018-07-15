@@ -1,21 +1,27 @@
 import React from 'react';
-import WeatherApi from '../api/weatherApi';
+import {getForecast} from '../utils/forecast';
+import _ from 'lodash';
+import DetailedWeatherCard from '../components/DetailedWeatherCard';
 
 class ForecastPage extends React.Component {
 
   state = {weatherData: {}};
 
   componentDidMount() {
-    const weatherPromise = WeatherApi.byCityName('New York');
+    const weatherPromise = getForecast('New York');
     weatherPromise.then((data) => {
-      this.setState({weatherData: data});
+      this.setState({
+        weatherData: _.map(data, (d) => {
+          return d.date
+        })
+      });
     });
     window.weatherData = this.state.weatherData;
   }
 
   render() {
     return (
-      JSON.stringify(this.state)
+      <DetailedWeatherCard/>
     );
   }
 }

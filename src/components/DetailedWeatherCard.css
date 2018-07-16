@@ -6,6 +6,7 @@
 
 .location {
     text-align: center;
+    background-color: #c9cdd2;
 }
 
 .location > p {
@@ -18,11 +19,10 @@
 
 .cardLayout {
     display: flex;
-    padding: 20px;
     height: 100%;
     box-sizing: border-box;
     font-size: 3rem;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .flex {

@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3df8d95f-8af2-4f2d-b3d9-3423fadf9e08" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/WeatherIcons/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/webpack.config.dev.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.config.dev.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/webpack.config.prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.config.prod.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DetailedWeatherCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DetailedWeatherCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DetailedWeatherCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DetailedWeatherCard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DetailedWeatherCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DetailedWeatherCard.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -55,8 +45,8 @@
       <file leaf-file-name="DetailedWeatherCard.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/DetailedWeatherCard.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
+            <state relative-caret-position="360">
+              <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -103,8 +93,8 @@
       <file leaf-file-name="DetailedWeatherCard.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/DetailedWeatherCard.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+            <state relative-caret-position="250">
+              <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -129,6 +119,7 @@
       <find>css</find>
       <find>wi-day-cloudy</find>
       <find>10</find>
+      <find>20px</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -292,7 +283,7 @@
       <workItem from="1530986105639" duration="14083000" />
       <workItem from="1531012754951" duration="6591000" />
       <workItem from="1531678072987" duration="6894000" />
-      <workItem from="1531696430600" duration="684000" />
+      <workItem from="1531696430600" duration="2783000" />
     </task>
     <task id="LOCAL-00001" summary="Added routes">
       <created>1530989509078</created>
@@ -336,17 +327,24 @@
       <option name="project" value="LOCAL" />
       <updated>1531682897430</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Card styling">
+      <created>1531697151270</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1531697151271</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28252000" />
+    <option name="totallyTimeSpent" value="30351000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1920" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.499187" visible="true" weight="0.18450184" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.499187" visible="true" weight="0.18450184" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32978722" />
@@ -354,7 +352,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.3293348" />
       <window_info id="npm" order="2" sideWeight="0.500813" side_tool="true" weight="0.18450184" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3293348" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3293348" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TypeScript" order="7" />
@@ -379,7 +377,8 @@
     <MESSAGE value="Setup routing" />
     <MESSAGE value=" wip" />
     <MESSAGE value=" yarn eject" />
-    <option name="LAST_COMMIT_MESSAGE" value=" yarn eject" />
+    <MESSAGE value="Card styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Card styling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -719,15 +718,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/DetailedWeatherCard.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        <state relative-caret-position="250">
+          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/DetailedWeatherCard.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
+        <state relative-caret-position="360">
+          <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

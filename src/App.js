@@ -26,7 +26,7 @@ class App extends Component {
               <Route path="/settings" component={ProfileSettingsPage}/>
               <Route path="/signin" component={SignInPage}/>
               <Route path="/signup" component={SignUpPage}/>
-              <Route path="/signout" component={SignOutPage}/>
+              <Route path="/signout" component={null}/>
               <Route component={NoMatch}/>
             </Switch>
           </div>

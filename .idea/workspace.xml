@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3df8d95f-8af2-4f2d-b3d9-3423fadf9e08" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/routes/SignInPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/SignUpPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/SignInPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/SignInPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/SignUpPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/SignUpPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/profileSettingsPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/profileSettingsPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -97,7 +92,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
@@ -109,23 +104,23 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="30">
+                <caret line="2" selection-start-line="2" selection-end-line="2" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="profileSettingsPage.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/routes/profileSettingsPage.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="415">
               <caret line="63" column="17" lean-forward="true" selection-end-line="70" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ForecastListPage.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/routes/ForecastListPage.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -197,6 +192,7 @@
         <option value="$PROJECT_DIR$/src/routes/SignUpPage.jsx" />
         <option value="$PROJECT_DIR$/src/routes/SignInPage.css" />
         <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -322,7 +318,7 @@
       <workItem from="1531012754951" duration="6591000" />
       <workItem from="1531678072987" duration="6894000" />
       <workItem from="1531696430600" duration="4123000" />
-      <workItem from="1531977605433" duration="3728000" />
+      <workItem from="1531977605433" duration="3880000" />
     </task>
     <task id="LOCAL-00001" summary="Added routes">
       <created>1530989509078</created>
@@ -387,26 +383,40 @@
       <option name="project" value="LOCAL" />
       <updated>1531980563812</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Other static pages.">
+      <created>1531981376608</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1531981376608</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Cleanup readme">
+      <created>1531981443476</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1531981443476</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35419000" />
+    <option name="totallyTimeSpent" value="35571000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1920" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.499187" visible="true" weight="0.18450184" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.499187" visible="true" weight="0.18450184" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32978722" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3293348" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3293348" />
       <window_info id="npm" order="2" sideWeight="0.500813" side_tool="true" weight="0.18450184" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3293348" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3293348" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -421,6 +431,16 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -433,7 +453,9 @@
     <MESSAGE value="Card styling" />
     <MESSAGE value="Completed day forecast card" />
     <MESSAGE value="Static list + WIP on the profile page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Static list + WIP on the profile page" />
+    <MESSAGE value="Other static pages." />
+    <MESSAGE value="Cleanup readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -580,30 +602,6 @@
         <state relative-caret-position="255">
           <caret line="17" selection-start-line="17" selection-end-line="18" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="225">
-            <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
-            <folding>
-              <element signature="e#0#41#0" expanded="true" />
-              <element signature="e#0#26#0" expanded="true" />
-              <element signature="e#0#42#0" expanded="true" />
-              <element signature="e#0#26#0" expanded="true" />
-              <element signature="e#0#35#0" expanded="true" />
-              <element signature="e#0#26#0" expanded="true" />
-              <element signature="e#0#26#0" expanded="true" />
-              <element signature="e#0#26#0" expanded="true" />
-              <element signature="e#0#28#0" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="-1920" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/weather-icons/css/weather-icons.css">
@@ -793,6 +791,19 @@
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="30">
+            <caret line="2" selection-start-line="2" selection-end-line="2" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="-1920" />
       </provider>
     </entry>
   </component>

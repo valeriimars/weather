@@ -24,7 +24,7 @@ class DetailedWeatherCard extends React.Component {
               <DaySunny style={{fontSize: '15rem'}}/>
               <h4 style={{fontSize: '5rem'}}>68&deg;</h4>
             </div>
-            <Card className={styles.smallCard}>
+            <Card className={styles.smallCard} elevation={10}>
               <div className={styles.row}>
 
                 <div className={styles.column}>

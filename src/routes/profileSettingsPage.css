@@ -1,0 +1,68 @@
+.container {
+    padding: 15px;
+    height: calc(100vh - 105px);
+    justify-content: space-evenly;
+}
+
+.location > p {
+    font-size: .5em;
+}
+
+.location > h3 {
+    margin-bottom: 0;
+}
+
+.cardLayout {
+    display: flex;
+    box-sizing: border-box;
+    font-size: 3rem;
+    justify-content: space-between;
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+    justify-items: center;
+    display: flex;
+}
+
+.row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    border-bottom: 2px solid lightgray;
+}
+
+.header h3 {
+    margin: 20px;
+    text-align: center;
+}
+
+.header {
+    background-color: lightgray;
+}
+
+.content {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.userImage {
+    width: 200px;
+    height: 200px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.button {
+
+}

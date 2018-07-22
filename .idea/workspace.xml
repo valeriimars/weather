@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3df8d95f-8af2-4f2d-b3d9-3423fadf9e08" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DetailedWeatherCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DetailedWeatherCard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DetailedWeatherCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DetailedWeatherCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+            <state relative-caret-position="435">
+              <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -31,14 +29,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.test.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/react-router-dom/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="137" selection-start-line="3" selection-start-column="137" selection-end-line="3" selection-end-column="137" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.test.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="3" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="45">
+              <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -46,8 +50,8 @@
       <file leaf-file-name="ForecastPage.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/routes/ForecastPage.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+            <state relative-caret-position="150">
+              <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="15" selection-end-column="10" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -118,15 +122,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mockApiResponse.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api/mockApiResponse.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="13" selection-start-column="13" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -181,14 +176,12 @@
         <option value="$PROJECT_DIR$/config/webpack.config.dev.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/App.css" />
-        <option value="$PROJECT_DIR$/src/routes/ForecastListPage.jsx" />
         <option value="$PROJECT_DIR$/src/components/forecastList.css" />
         <option value="$PROJECT_DIR$/src/components/ForecastList.jsx" />
         <option value="$PROJECT_DIR$/src/routes/SignInPage.jsx" />
         <option value="$PROJECT_DIR$/src/routes/SignUpPage.css" />
         <option value="$PROJECT_DIR$/src/routes/SignUpPage.jsx" />
         <option value="$PROJECT_DIR$/src/routes/SignInPage.css" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/routes/ProfileSettingsPage.jsx" />
         <option value="$PROJECT_DIR$/src/routes/profileSettingsPage.css" />
@@ -196,11 +189,13 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/api/weatherApi.js" />
         <option value="$PROJECT_DIR$/src/components/WeatherIcons/index.jsx" />
-        <option value="$PROJECT_DIR$/src/routes/ForecastPage.jsx" />
         <option value="$PROJECT_DIR$/src/utils/forecast.js" />
         <option value="$PROJECT_DIR$/src/components/DetailedWeatherCard.jsx" />
         <option value="$PROJECT_DIR$/src/components/DetailedWeatherCard.css" />
         <option value="$PROJECT_DIR$/src/App.test.js" />
+        <option value="$PROJECT_DIR$/src/routes/ForecastPage.jsx" />
+        <option value="$PROJECT_DIR$/src/routes/ForecastListPage.jsx" />
+        <option value="$PROJECT_DIR$/src/App.js" />
       </list>
     </option>
   </component>
@@ -323,7 +318,7 @@
       <workItem from="1531696430600" duration="4123000" />
       <workItem from="1531977605433" duration="5727000" />
       <workItem from="1532201880485" duration="7444000" />
-      <workItem from="1532278380633" duration="7633000" />
+      <workItem from="1532278380633" duration="8445000" />
     </task>
     <task id="LOCAL-00001" summary="Added routes">
       <created>1530989509078</created>
@@ -416,18 +411,25 @@
       <option name="project" value="LOCAL" />
       <updated>1532287716989</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added tests">
+      <created>1532288235222</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1532288235222</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52495000" />
+    <option name="totallyTimeSpent" value="53307000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1920" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.499187" visible="true" weight="0.18450184" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.499187" visible="true" weight="0.18450184" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32978722" />
@@ -435,7 +437,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.3293348" />
       <window_info id="npm" order="2" sideWeight="0.500813" side_tool="true" weight="0.18450184" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3293348" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3293348" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -496,7 +498,8 @@
     <MESSAGE value="Other static pages." />
     <MESSAGE value="Cleanup readme" />
     <MESSAGE value="Day's forecast with mock data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day's forecast with mock data" />
+    <MESSAGE value="added tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="added tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -504,7 +507,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build/index.html" />
     <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/ListItemIcon/ListItemIcon.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -668,13 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/ForecastListPage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ForecastList.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -791,12 +786,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/forecast.js">
+    <entry file="file://$PROJECT_DIR$/src/components/DetailedWeatherCard.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="70" column="6" lean-forward="true" selection-start-line="70" selection-start-column="6" selection-end-line="70" selection-end-column="6" />
+        <state relative-caret-position="180">
+          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/ForecastPage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="15" selection-end-column="10" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/ForecastListPage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-router-dom/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="137" selection-start-line="3" selection-start-column="137" selection-end-line="3" selection-end-column="137" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/DetailedWeatherCard.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="108" column="19" lean-forward="true" selection-start-line="108" selection-start-column="19" selection-end-line="108" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -811,49 +837,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
+    <entry file="file://$PROJECT_DIR$/src/utils/forecast.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+        <state relative-caret-position="147">
+          <caret line="70" column="6" lean-forward="true" selection-start-line="70" selection-start-column="6" selection-end-line="70" selection-end-column="6" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/ForecastPage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/DetailedWeatherCard.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/DetailedWeatherCard.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="108" column="19" lean-forward="true" selection-start-line="108" selection-start-column="19" selection-end-line="108" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="3" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+        <state relative-caret-position="45">
+          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>

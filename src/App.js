@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 
 import ForecastPage from './routes/ForecastPage';
 import ForecastListPage from './routes/ForecastListPage';
@@ -20,14 +20,16 @@ class App extends Component {
           <NavigationBar/>
           <div className={styles.container}>
           <Switch>
-              <Route exact path="/" component={ForecastListPage}/>
+              <Route exact path="/" component={ForecastPage}/>
               <Route path="/forecast" component={ForecastPage}/>
               <Route path="/forecast-list" component={ForecastListPage}/>
               <Route path="/settings" component={ProfileSettingsPage}/>
               <Route path="/signin" component={SignInPage}/>
               <Route path="/signup" component={SignUpPage}/>
-              <Route path="/signout" component={null}/>
-              <Route component={NoMatch}/>
+              <Route path="/signout" render={() => {
+                return <Redirect to={'/signin'}/>
+              }}/>
+
             </Switch>
           </div>
         </div>

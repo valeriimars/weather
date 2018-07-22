@@ -63,7 +63,9 @@ class DetailedWeatherCard extends React.Component {
 
   renderForecastTime = (index) => {
     const dateTime = _.get(this.props.forecastWeatherData, `${index}.date_moment`);
-    return dateTime.format('hh a');
+    return (
+      <span style={{fontSize: '.8em'}}>{dateTime.format('hh a')}</span>
+    );
   };
 
   renderTemperatureForecast = (index) => {
@@ -96,7 +98,7 @@ class DetailedWeatherCard extends React.Component {
             <Card>
               <div className={styles.column + " " + styles.location}>
                 <h3>San Jose, CA </h3>
-                <p>Forecast for Today <p className={styles.today}>{this.today()}</p></p>
+                <div>Forecast for Today <p className={styles.today}>{this.today()}</p></div>
               </div>
             </Card>
             <div className={styles.row}>

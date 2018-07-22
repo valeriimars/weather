@@ -9,6 +9,7 @@ export const DayCloudy = () => <i className="wi wi-day-cloudy-high"/>;
 export const DayRain = () => <i className="wi wi-day-rain"/>;
 export const DayWindy = () => <i className="wi wi-day-windy"/>;
 export const DaySunnyOvercast = () => <i className="wi wi-day-sunny-overcast"/>;
+export const DaySnow = () => <i className="wi wi-day-snow" />;
 
 export const NightClear = () => <i className="wi wi-night-clear"/>;
 export const NightCloudy = () => <i className="wi wi-night-alt-cloudy"/>;

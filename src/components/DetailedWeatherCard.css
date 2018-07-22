@@ -9,12 +9,14 @@
     background-color: #c9cdd2;
 }
 
+
 .location > p {
     font-size: .5em;
 }
 
 .location > h3 {
     margin-bottom: 0;
+    margin-top: 5px;
 }
 
 .cardLayout {
@@ -46,3 +48,24 @@
     padding: 20px;
 }
 
+.today {
+    font-size: .7em;
+    font-style: italic;
+    margin: 0;
+}
+
+.secondaryTemperature {
+    font-size: .5em;
+    margin: 0;
+    font-weight: normal;
+    font-style: italic;
+    border-top: 1px solid black;
+}
+
+.miniCard {
+    font-size: 3rem;
+}
+
+.miniFont {
+    font-size: .5em;
+}

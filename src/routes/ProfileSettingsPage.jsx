@@ -50,6 +50,11 @@ class ProfilePage extends React.Component {
               </FormControl>
 
               <FormControl>
+                <InputLabel htmlFor="home-location">Work Location</InputLabel>
+                <Input id="work-location"/>
+              </FormControl>
+
+              <FormControl>
                 <Button variant="outlined" className={styles.button} variant="contained" color="primary" >
                   Save
                 </Button>

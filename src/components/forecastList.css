@@ -7,6 +7,7 @@
 .location {
     text-align: center;
     background-color: #c9cdd2;
+    margin: 0;
 }
 
 .location > p {
@@ -15,6 +16,7 @@
 
 .location > h3 {
     margin-bottom: 0;
+    margin-top:0;
 }
 
 .cardLayout {
@@ -40,6 +42,11 @@
     justify-content: space-around;
     display: flex;
     border-bottom: 2px solid lightgray;
+    padding-top:20px;
+    padding-bottom: 20px;
+}
+
+.itemRow {
 }
 
 .row:hover {

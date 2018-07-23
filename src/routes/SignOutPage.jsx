@@ -2,7 +2,7 @@ import React from 'react';
 
 class SignOutPage extends React.Component {
   render() {
-    return <h1>Sign Out Page</h1>
+    return <span> Sign Out page placeholder.</span>
   }
 }
 export default SignOutPage;

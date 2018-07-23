@@ -48,6 +48,8 @@ const toCelcius = (kelvin) => precise(kelvin - 273.15);
  */
 const toFahrenheit = (kelvin) => precise((kelvin * (9 / 5)) - 459.67);
 
+const metersToFeet = (meters) => precise(meters / 0.3048);
+
 /**
  *
  * @param weatherListItem
@@ -79,7 +81,10 @@ const formatWeather = (weatherListItem) => {
       C: toCelcius(_.get(weatherListItem, 'main.temp_max')),
     },
     humidity: _.get(weatherListItem, 'main.humidity'),
-    wind: _.get(weatherListItem, 'wind.speed'),
+    wind: {
+      metric: _.get(weatherListItem, 'wind.speed'),
+      imperial: metersToFeet(_.get(weatherListItem, 'wind.speed')),
+    },
     main: _.get(weatherListItem, 'weather[0].main'),
     description: _.get(weatherListItem, 'weather[0].description'),
     dt_txt: _.get(weatherListItem, 'dt_txt'),

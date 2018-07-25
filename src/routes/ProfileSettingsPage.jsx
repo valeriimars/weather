@@ -9,53 +9,154 @@ import InputLabel from '@material-ui/core/InputLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
+import userImage from './assets/default-user.png';
+import {getUserById} from '../utils/db';
+import {auth} from '../utils/firebase';
+import _ from 'lodash';
 
-import userImage from './assets/default-user.png'
+const byPropKey = (propertyName, value) => () => ({
+  [propertyName]: value,
+});
+
 
 class ProfilePage extends React.Component {
+
   state = {
-    name: ''
+    firstName: '',
+    lastName: '',
+    homeLocation: '',
+    workLocation: '',
+    imageUrl: '',
+    error: null,
+    user: null,
+    userData: null,
   };
 
-  handleChange = () => {
+  componentDidMount() {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        getUserById(user.uid)
+          .once('value')
+          .then((dataSnapshot) => {
+            const firstName = dataSnapshot.child('firstName').val();
+            const lastName = dataSnapshot.child('lastName').val();
+            const homeLocation = dataSnapshot.child('homeLocation').val();
+            const imageUrl = dataSnapshot.child('imageUrl').val();
+            const workLocation = dataSnapshot.child('workLocation').val();
 
+            this.setState({
+              user,
+              firstName,
+              lastName,
+              homeLocation,
+              imageUrl,
+              workLocation,
+            });
+          });
+      } else {
+        // No user is signed in.
+      }
+    });
+  }
+
+  onSubmit = (event) => {
+    if (!this.state.firstName || !this.state.lastName) {
+      this.setState({error: {message: 'First Name and Last Name cannot be empty'}});
+      return;
+    }
+    this.setState({error: null});
+    event.preventDefault();
+
+    const {
+      firstName,
+      lastName,
+      homeLocation,
+      imageUrl,
+      workLocation
+    } = this.state;
+
+    getUserById(this.state.user.uid)
+      .set({
+        firstName,
+        lastName,
+        homeLocation,
+        imageUrl,
+        workLocation,
+      });
   };
 
   render() {
+    if (!this.state.user) {
+      return (
+        <div className={styles.container}>
+          <Paper elevation={23} style={{height: '100%'}}>
+            <h2 style={{paddingTop: '50px', textAlign: 'center'}}>Please Log In to see your profile</h2>
+          </Paper>
+        </div>
+      );
+    }
+
+    const {error} = this.state;
     return (
       <div className={styles.container}>
         <Paper elevation={23} style={{height: '100%'}}>
           <div className={styles.cardLayout + " " + styles.column}>
             <Card>
               <div className={styles.column + " " + styles.header}>
-                <h3>User settings</h3>
+                <h3>Profile settings</h3>
               </div>
             </Card>
             <div className={styles.content}>
               <img src={userImage} className={styles.userImage}/>
+              <input type="file" style={{cursor: 'pointer'}}/>
             </div>
 
             <div className={styles.form}>
               <FormControl>
                 <InputLabel htmlFor="first-name">First Name</InputLabel>
-                <Input id="first-name"/>
+                <Input
+                  value={this.state.firstName}
+                  id="first-name"
+                  onChange={event => this.setState(byPropKey('firstName', event.target.value))}
+                />
               </FormControl>
               <FormControl>
-                <InputLabel htmlFor="name-simple">Last Name</InputLabel>
-                <Input id="last-name"/>
+                <InputLabel htmlFor="last-name">Last Name</InputLabel>
+                <Input
+                  id="last-name"
+                  value={this.state.lastName}
+                  onChange={event => this.setState(byPropKey('lastName', event.target.value))}
+                />
               </FormControl>
               <FormControl>
                 <InputLabel htmlFor="home-location">Home Location</InputLabel>
-                <Input id="home-location"/>
+                <Input
+                  id="home-location"
+                  value={this.state.homeLocation}
+                  onChange={event => this.setState(byPropKey('homeLocation', event.target.value))}
+                />
               </FormControl>
 
               <FormControl>
                 <InputLabel htmlFor="home-location">Work Location</InputLabel>
-                <Input id="work-location"/>
+                <Input
+                  id="work-location"
+                  value={this.state.workLocation}
+                  onChange={event => this.setState(byPropKey('workLocation', event.target.value))}
+                />
               </FormControl>
-
               <FormControl>
-                <Button variant="outlined" className={styles.button} variant="contained" color="primary" >
+                <div style={{color: 'red', fontSize: '.3em'}}>
+                  {error && <p>{error.message}</p>}
+                </div>
+              </FormControl>
+              <FormControl>
+                <Button
+                  className={styles.button}
+                  variant="contained"
+                  color="primary"
+                  onClick={this.onSubmit}
+                >
                   Save
                 </Button>
               </FormControl>

@@ -5,4 +5,5 @@ export const signInWithEmailAndPassword = (email, password) => auth.signInWithEm
 export const signOut = () => auth.signOut();
 export const resetPassword = (email) => auth.sendPasswordResetEmail(email);
 export const doPasswordUpdate = (password) => auth.currentUser.updatePassword(password);
-export const getLoggedInUser = () => auth.currentUser;;
+export const getLoggedInUser = () => auth.currentUser;
+export const updateCurrentUser = () => auth.updateCurrentUser();

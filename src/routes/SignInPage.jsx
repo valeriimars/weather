@@ -37,7 +37,7 @@ class SignInPage extends React.Component {
       .then(() => {
         this.setState(() => ({...INITIAL_STATE}));
         history.push('/settings');
-        console.log('Successfully Signed In')
+        console.log('Successfully Signed In');
       })
       .catch(error => {
         this.setState(byPropName('error', error));

@@ -7,6 +7,9 @@ import Card from '@material-ui/core/Card';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
+import Switch from '@material-ui/core/Switch';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormGroup from '@material-ui/core/FormGroup';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import userImage from './assets/default-user.png';
@@ -136,55 +139,100 @@ class ProfilePage extends React.Component {
               <label htmlFor="file">Change Profile Image</label>
             </div>
 
-            <div className={styles.form}>
-              <FormControl>
-                <InputLabel htmlFor="first-name">First Name</InputLabel>
-                <Input
-                  value={this.state.firstName}
-                  id="first-name"
-                  onChange={event => this.setState(byPropKey('firstName', event.target.value))}
-                />
-              </FormControl>
-              <FormControl>
-                <InputLabel htmlFor="last-name">Last Name</InputLabel>
-                <Input
-                  id="last-name"
-                  value={this.state.lastName}
-                  onChange={event => this.setState(byPropKey('lastName', event.target.value))}
-                />
-              </FormControl>
-              <FormControl>
-                <InputLabel htmlFor="home-location">Home Location</InputLabel>
-                <Input
-                  id="home-location"
-                  value={this.state.homeLocation}
-                  onChange={event => this.setState(byPropKey('homeLocation', event.target.value))}
-                />
-              </FormControl>
+            <div className={styles.row}>
+              <div className={styles.form}>
+                <FormControl>
+                  <InputLabel htmlFor="first-name">First Name</InputLabel>
+                  <Input
+                    value={this.state.firstName}
+                    id="first-name"
+                    onChange={event => this.setState(byPropKey('firstName', event.target.value))}
+                  />
+                </FormControl>
+                <FormControl>
+                  <InputLabel htmlFor="last-name">Last Name</InputLabel>
+                  <Input
+                    id="last-name"
+                    value={this.state.lastName}
+                    onChange={event => this.setState(byPropKey('lastName', event.target.value))}
+                  />
+                </FormControl>
+                <FormControl>
+                  <InputLabel htmlFor="home-location">Home Location</InputLabel>
+                  <Input
+                    id="home-location"
+                    value={this.state.homeLocation}
+                    onChange={event => this.setState(byPropKey('homeLocation', event.target.value))}
+                  />
+                </FormControl>
 
-              <FormControl>
-                <InputLabel htmlFor="home-location">Work Location</InputLabel>
-                <Input
-                  id="work-location"
-                  value={this.state.workLocation}
-                  onChange={event => this.setState(byPropKey('workLocation', event.target.value))}
+                <FormControl>
+                  <InputLabel htmlFor="home-location">Work Location</InputLabel>
+                  <Input
+                    id="work-location"
+                    value={this.state.workLocation}
+                    onChange={event => this.setState(byPropKey('workLocation', event.target.value))}
+                  />
+                </FormControl>
+                <FormControl>
+                  <div style={{color: 'red', fontSize: '.3em'}}>
+                    {error && <p>{error.message}</p>}
+                  </div>
+                </FormControl>
+                <FormControl>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={this.onSubmit}
+                  >
+                    Save
+                  </Button>
+                </FormControl>
+              </div>
+              <div className={styles.otherConfigs}>
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={true}
+                      value="C"
+                      color="primary"
+                    />
+                  }
+                  label="Temperature in Celcius&deg; "
                 />
-              </FormControl>
-              <FormControl>
-                <div style={{color: 'red', fontSize: '.3em'}}>
-                  {error && <p>{error.message}</p>}
-                </div>
-              </FormControl>
-              <FormControl>
-                <Button
-                  className={styles.button}
-                  variant="contained"
-                  color="primary"
-                  onClick={this.onSubmit}
-                >
-                  Save
-                </Button>
-              </FormControl>
+                  <FormControlLabel
+                    control={
+                      <Switch
+                        checked={true}
+                        value="F"
+                        color="primary"
+                      />
+                    }
+                    label="Distance in Feet"
+                  />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={false}
+                      value="commute-suggestions"
+                      color="primary"
+                      disabled
+                    />
+                  }
+                  label="Commute suggestions"
+                />
+                <FormControlLabel
+                  control={
+                    <Switch
+                      checked={false}
+                      value="x"
+                      color="primary"
+                      disabled
+                    />
+                  }
+                  label="Use GPS data"
+                />
+              </div>
             </div>
           </div>
         </Paper>

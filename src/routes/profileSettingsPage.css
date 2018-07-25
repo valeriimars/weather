@@ -59,7 +59,6 @@
 }
 
 .userImage {
-    width: 200px;
     height: 200px;
 }
 
@@ -67,9 +66,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 400px;
+    max-width: 550px;
+    flex-grow: 1;
     min-height: 350px;
-    margin: 0 auto;
 }
 
 .inputfile {
@@ -90,4 +89,10 @@
 .inputfile:focus + label,
 .inputfile + label:hover {
     background-color: darkgrey;
+}
+
+.otherConfigs {
+    font-size: .5em;
+    display: flex;
+    flex-direction: column;
 }

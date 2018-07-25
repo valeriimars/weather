@@ -11,7 +11,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import userImage from './assets/default-user.png';
 import {getUserById} from '../utils/db';
-import {auth} from '../utils/firebase';
+import {auth, storage} from '../utils/firebase';
 import _ from 'lodash';
 
 const byPropKey = (propertyName, value) => () => ({
@@ -26,10 +26,9 @@ class ProfilePage extends React.Component {
     lastName: '',
     homeLocation: '',
     workLocation: '',
-    imageUrl: '',
+    imageUrl: userImage,
     error: null,
     user: null,
-    userData: null,
   };
 
   componentDidMount() {
@@ -85,6 +84,25 @@ class ProfilePage extends React.Component {
       });
   };
 
+  onFileUpload = (event) => {
+    console.log(event.target.files[0]);
+    const file = event.target.files[0];
+    if (!file) {
+      return null;
+    }
+    const storageRef = storage.ref(`${this.state.user.uid}/${file.name}`);
+    storageRef
+      .put(file)
+      .then((snapshot) => {
+        snapshot.ref
+          .getDownloadURL()
+          .then((url) => {
+            this.setState({imageUrl: url});
+            getUserById(this.state.user.uid).set({imageUrl: url});
+          })
+      });
+  };
+
   render() {
     if (!this.state.user) {
       return (
@@ -106,9 +124,16 @@ class ProfilePage extends React.Component {
                 <h3>Profile settings</h3>
               </div>
             </Card>
-            <div className={styles.content}>
-              <img src={userImage} className={styles.userImage}/>
-              <input type="file" style={{cursor: 'pointer'}}/>
+            <div className={styles.content + " " + styles.imageContainer}>
+              <img src={this.state.imageUrl} className={styles.userImage}/>
+              <input
+                className={styles.inputfile}
+                type="file"
+                style={{cursor: 'pointer'}}
+                onChange={this.onFileUpload}
+                id="file"
+              />
+              <label htmlFor="file">Change Profile Image</label>
             </div>
 
             <div className={styles.form}>

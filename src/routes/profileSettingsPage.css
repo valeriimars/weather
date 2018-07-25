@@ -52,6 +52,12 @@
     padding-bottom: 50px;
 }
 
+.imageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .userImage {
     width: 200px;
     height: 200px;
@@ -66,6 +72,22 @@
     margin: 0 auto;
 }
 
-.button {
+.inputfile {
+    display: none;
+}
 
+.inputfile + label {
+    margin: 10px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    background-color: #4b4b4b;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: darkgrey;
 }

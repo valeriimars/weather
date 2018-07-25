@@ -36,7 +36,7 @@ class SignInPage extends React.Component {
     signInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState(() => ({...INITIAL_STATE}));
-        history.push('/');
+        history.push('/settings');
         console.log('Successfully Signed In')
       })
       .catch(error => {
@@ -56,7 +56,7 @@ class SignInPage extends React.Component {
     const isInvalid =
       password === '' ||
       email === '';
-    
+
     return (
       <div className={styles.container}>
         <Paper elevation={23} style={{height: '100%'}}>
@@ -66,12 +66,18 @@ class SignInPage extends React.Component {
             </div>
             <div className={styles.form}>
               <FormControl>
-                <InputLabel htmlFor="user-name">User Name</InputLabel>
-                <Input id="user-name"/>
+                <InputLabel htmlFor="email">Email</InputLabel>
+                <Input
+                  id="email"
+                  onChange={event => this.setState(byPropName('email', event.target.value))}
+                />
               </FormControl>
               <FormControl>
                 <InputLabel htmlFor="password">Password</InputLabel>
-                <Input id="password"/>
+                <Input
+                  id="password"
+                  onChange={event => this.setState(byPropName('password', event.target.value))}
+                />
               </FormControl>
               <FormControl style={{color: 'red', fontSize: '.3em'}}>
                 {error && <p>{error.message}</p>}

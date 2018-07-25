@@ -6,9 +6,9 @@ import ForecastListPage from './routes/ForecastListPage';
 import ProfileSettingsPage from './routes/ProfileSettingsPage';
 import SignInPage from './routes/SignInPage';
 import SignUpPage from './routes/SignUpPage';
-import SignOutPage from './routes/SignOutPage';
 import NoMatch from './routes/NoMatch';
 import NavigationBar from './components/NavigationBar';
+import {signOut} from './utils/authentication';
 
 import styles from './App.css';
 
@@ -27,9 +27,10 @@ class App extends Component {
               <Route path="/signin" component={SignInPage}/>
               <Route path="/signup" component={SignUpPage}/>
               <Route path="/signout" render={() => {
+                signOut();
                 return <Redirect to={'/signin'}/>
               }}/>
-
+              <Route component={NoMatch}/>
             </Switch>
           </div>
         </div>

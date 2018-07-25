@@ -1,9 +1,14 @@
 import React from 'react';
+import {withRouter} from 'react-router';
 
 class NoMatch extends React.Component {
   render() {
-    return <h1>404</h1>
+    return (
+      <div style={{padding: '50px;', width: '900px', margin: '0 auto', fontSize:'2em'}}>
+        <p>Invalid URL: {window.location.origin}<strong>{this.props.location.pathname}</strong></p>
+      </div>
+    );
   }
 }
 
-export default NoMatch;
+export default withRouter(NoMatch);

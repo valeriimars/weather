@@ -1,7 +1,7 @@
 import React from 'react';
 import ForecastList from '../components/ForecastList';
 import PropTypes from 'prop-types';
-import {getForecastSync} from "../utils/forecast";
+import {getForecast, getForecastSync} from "../utils/forecast";
 import {auth} from "../utils/firebase";
 import {getUserDatabaseById} from "../utils/db";
 
@@ -43,19 +43,19 @@ class ForecastListPage extends React.Component {
               temperatureUnits,
               distanceUnits,
             });
+            const weatherPromise = getForecast(homeLocation);
+            weatherPromise.then((data) => {
+              this.setState({
+                weatherData: data,
+              });
+            });
           });
       } else {
         // No user is signed in.
       }
     });
 
-    // const weatherPromise = getForecast('New York');
-    // weatherPromise.then((data) => {
-    //   this.setState({
-    //     weatherData: data,
-    //   });
-    // });
-    this.setState({weatherData: getForecastSync()});
+    // this.setState({weatherData: getForecastSync()});
   }
 
   render() {
@@ -64,7 +64,9 @@ class ForecastListPage extends React.Component {
       <ForecastList
         temperatureUnits={this.state.temperatureUnits}
         distanceUnits={this.state.distanceUnits}
-        weatherDataList={this.state.weatherData}/>
+        weatherDataList={this.state.weatherData}
+        cityName={this.state.homeLocation}
+      />
     );
   }
 }

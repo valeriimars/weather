@@ -99,7 +99,6 @@ class ProfilePage extends React.Component {
   };
 
   onFileUpload = (event) => {
-    console.log(event.target.files[0]);
     const file = event.target.files[0];
     if (!file) {
       return null;
@@ -138,7 +137,6 @@ class ProfilePage extends React.Component {
     }
 
     const {error} = this.state;
-    console.log(this.state)
     return (
       <div className={styles.container}>
         <Paper elevation={23} style={{height: '100%'}}>

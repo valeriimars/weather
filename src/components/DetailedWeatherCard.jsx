@@ -20,16 +20,18 @@ class DetailedWeatherCard extends React.Component {
     forecastWeatherData: PropTypes.array,
     temperatureUnits: PropTypes.string,
     distanceUnits: PropTypes.string,
+    cityName: PropTypes.string,
   };
 
   static defaultProps = {
     weatherData: {},
+    cityName: 'San Jose',
   };
 
   today = () => {
     const {date_moment} = this.props.weatherData;
     if (date_moment) {
-      return date_moment.format('MMMM Do, h:mm a');
+      return date_moment.format('MMMM Do');
     }
     return null;
   };
@@ -147,7 +149,7 @@ class DetailedWeatherCard extends React.Component {
           <div className={styles.cardLayout + " " + styles.column}>
             <Card>
               <div className={styles.column + " " + styles.location}>
-                <h3>San Jose, CA </h3>
+                <h3>{this.props.cityName}</h3>
                 <div>Forecast for Today <p className={styles.today}>{this.today()}</p></div>
               </div>
             </Card>

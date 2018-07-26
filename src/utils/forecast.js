@@ -100,9 +100,9 @@ const formatWeather = (weatherListItem) => {
  */
 export async function getForecast(city) {
   const weatherData = await WeatherAPI.byCityName(city);
-  return _.map(weatherData.list, (weatherListItem) => {
+  return Promise.resolve(_.map(weatherData.list, (weatherListItem) => {
     return formatWeather(weatherListItem)
-  });
+  }));
 }
 
 /**

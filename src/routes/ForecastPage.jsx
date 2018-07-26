@@ -10,16 +10,11 @@ class ForecastPage extends React.Component {
   state = {
     temperatureUnits: '',
     distanceUnits: '',
+    homeLocation: '',
     weatherData: [{}]
   };
 
   componentDidMount() {
-    // const weatherPromise = getForecast('New York');
-    // weatherPromise.then((data) => {
-    //   this.setState({
-    //     weatherData: data,
-    //   });
-    // });
     auth.onAuthStateChanged((user) => {
       if (user) {
         getUserDatabaseById(user.uid)
@@ -40,12 +35,20 @@ class ForecastPage extends React.Component {
               temperatureUnits,
               distanceUnits,
             });
+
+            const weatherPromise = getForecast(homeLocation);
+            weatherPromise.then((data) => {
+              this.setState({
+                weatherData: data,
+              });
+            });
           });
       } else {
         // No user is signed in.
       }
     });
-    this.setState({weatherData: getForecastSync()});
+
+    // this.setState({weatherData: getForecastSync()});
   }
 
   render() {
@@ -55,6 +58,7 @@ class ForecastPage extends React.Component {
         distanceUnits={this.state.distanceUnits}
         weatherData={_.first(this.state.weatherData)}
         forecastWeatherData={_.slice(this.state.weatherData, 1)}
+        cityName={this.state.homeLocation}
       />
     );
   }

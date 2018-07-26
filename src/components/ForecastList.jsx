@@ -14,6 +14,7 @@ class ForecastList extends React.Component {
     weatherDataList: PropTypes.array,
     temperatureUnits: PropTypes.string,
     distanceUnits: PropTypes.string,
+    cityName: PropTypes.string,
   };
 
   static defaultProps = {
@@ -50,7 +51,6 @@ class ForecastList extends React.Component {
   };
 
   renderWindSpeed = (itemData) => {
-    console.log(this.props)
     if (this.props.distanceUnits === 'Feet') {
       return (<span style={{fontSize: '1.5rem'}}>{itemData.wind.imperial} feet/s</span>);
     } else {
@@ -107,7 +107,7 @@ class ForecastList extends React.Component {
           <div className={styles.cardLayout + " " + styles.column}>
             <Card>
               <div className={styles.column + " " + styles.location}>
-                <h3>San Jose, CA </h3>
+                <h3>{this.props.cityName}</h3>
                 <p>5 Days Forecast</p>
               </div>
             </Card>

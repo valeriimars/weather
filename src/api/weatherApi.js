@@ -12,9 +12,10 @@ export class WeatherAPI {
    * @returns {Promise}
    */
   static async byCityName(cityName) {
-    return await axios.get(
+    const res =  await axios(
       `http://api.openweathermap.org/data/2.5/forecast?q=${cityName},us&appid=${OPEN_WEATHER_KEY}`
     );
+    return await res.data;
   }
 
   static byCityNameSync() {

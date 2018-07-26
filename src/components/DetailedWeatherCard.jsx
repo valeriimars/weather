@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
+import moment from 'moment';
 import styles from './DetailedWeatherCard.css';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
@@ -29,11 +30,7 @@ class DetailedWeatherCard extends React.Component {
   };
 
   today = () => {
-    const {date_moment} = this.props.weatherData;
-    if (date_moment) {
-      return date_moment.format('MMMM Do');
-    }
-    return null;
+    return moment().format('MMMM Do, h:mm a')
   };
 
   temperature = () => {

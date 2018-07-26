@@ -67,7 +67,6 @@ class ForecastPage extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <DetailedWeatherCard
         temperatureUnits={this.state.temperatureUnits}

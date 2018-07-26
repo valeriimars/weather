@@ -188,6 +188,7 @@ class ProfilePage extends React.Component {
                 <FormControl>
                   <InputLabel htmlFor="home-location">Work Location</InputLabel>
                   <Input
+                    disabled
                     id="work-location"
                     value={this.state.workLocation}
                     onChange={event => this.setState(byPropKey('workLocation', event.target.value))}

@@ -90,6 +90,7 @@ class SignUpPage extends React.Component {
               <FormControl>
                 <InputLabel htmlFor="password">Password</InputLabel>
                 <Input
+                  type="password"
                   id="password"
                   onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
                 />
@@ -98,6 +99,7 @@ class SignUpPage extends React.Component {
                 <InputLabel htmlFor="repeat-password">Repeat Password</InputLabel>
                 <Input
                   id="repeat-password"
+                  type="password"
                   onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
                 />
               </FormControl>

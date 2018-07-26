@@ -49,6 +49,15 @@ class ForecastList extends React.Component {
     }
   };
 
+  renderWindSpeed = (itemData) => {
+    console.log(this.props)
+    if (this.props.distanceUnits === 'Feet') {
+      return (<span style={{fontSize: '1.5rem'}}>{itemData.wind.imperial} feet/s</span>);
+    } else {
+      return (<span style={{fontSize: '1.5rem'}}>{itemData.wind.metric} meters/s</span>);
+    }
+  };
+
   renderRowItem = (index) => {
     const itemData = _.get(this.props.weatherDataList, index);
 
@@ -57,7 +66,7 @@ class ForecastList extends React.Component {
         <span style={{fontSize: '1rem'}}>{itemData.date_moment.format('DD.MM h:mm a')}</span>
         {this.renderIcon(itemData.main)}
         {this.renderTemperature(itemData)}
-        <span style={{fontSize: '1.5rem'}}>{itemData.wind.imperial} feet/s</span>
+        {this.renderWindSpeed(itemData)}
         {this.renderWindIcon(itemData.wind.imperial)}
       </div>
     );

@@ -71,7 +71,6 @@ class DetailedWeatherCard extends React.Component {
   };
 
   renderTemperatureForecast = (index) => {
-    console.log(this.props)
     const temperature = _.get(this.props.forecastWeatherData, `${index}.temp`);
     const style = {margin: 0}
     if (this.props.temperatureUnits === 'F') {
@@ -109,6 +108,26 @@ class DetailedWeatherCard extends React.Component {
     );
   };
 
+  renderWindSpeed = () => {
+    if (this.props.distanceUnits === 'Feet') {
+      return (
+        <span>
+          <span style={{fontSize: '1.5rem'}}>wind: </span><span style={{fontSize: '2rem'}}>
+            <strong>{this.props.weatherData.wind.imperial} feet/s</strong>
+          </span>
+        </span>
+      );
+    } else {
+      return (
+        <span>
+          <span style={{fontSize: '1.5rem'}}>wind: </span>
+          <span style={{fontSize: '1rem'}}>
+            <strong>{this.props.weatherData.wind.metric} meters/s</strong>
+          </span>
+        </span>
+      );
+    }
+  };
 
   render() {
 
@@ -135,6 +154,9 @@ class DetailedWeatherCard extends React.Component {
             <div className={styles.row}>
               {this.renderMainIcon()}
               {this.renderMainTemperature()}
+            </div>
+            <div className={styles.row} style={{justifyContent: 'left', paddingLeft: '50px'}}>
+              {this.renderWindSpeed()}
             </div>
             <Card className={styles.smallCard} elevation={10}>
               <div className={styles.row}>

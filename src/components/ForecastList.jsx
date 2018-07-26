@@ -8,18 +8,18 @@ import _ from 'lodash';
 import {DaySunny, WindStrong, Wind} from './WeatherIcons';
 import {getWeatherIcon} from "../utils/forecast";
 
-const dateTime = '3 PM May 28th';
-const temperature = '68' + '°';
-const windSpeed = '45 feet/s';
-
 class ForecastList extends React.Component {
 
   static propTypes = {
     weatherDataList: PropTypes.array,
+    temperatureUnits: PropTypes.string,
+    distanceUnits: PropTypes.string,
   };
 
   static defaultProps = {
     weatherDataList: [],
+    temperatureUnits: 'F',
+    distanceUnits: 'Feet',
   };
 
   renderWindIcon = (imperialSpeed) => {
@@ -30,6 +30,25 @@ class ForecastList extends React.Component {
     );
   };
 
+  renderTemperature = (itemData) => {
+    if (this.props.temperatureUnits === 'F') {
+      return (
+        <p style={{fontSize: '.6em'}}>
+          <strong>{itemData.temp.F}&deg;F</strong>
+          <span style={{fontSize: '.6em'}}>/ {itemData.temp.C}&deg;C</span>
+        </p>
+      );
+    }
+    if (this.props.temperatureUnits === 'C') {
+      return (
+        <p style={{fontSize: '.6em'}}>
+          <strong>{itemData.temp.C}&deg;C</strong>
+          <span style={{fontSize: '.6em'}}>/ {itemData.temp.F}&deg;F</span>
+        </p>
+      );
+    }
+  };
+
   renderRowItem = (index) => {
     const itemData = _.get(this.props.weatherDataList, index);
 
@@ -37,10 +56,7 @@ class ForecastList extends React.Component {
       <div className={styles.row + " " + styles.itemRow} key={index}>
         <span style={{fontSize: '1rem'}}>{itemData.date_moment.format('DD.MM h:mm a')}</span>
         {this.renderIcon(itemData.main)}
-        <p style={{fontSize: '.6em'}}>
-          <strong>{itemData.temp.F}&deg;F</strong>
-          <span style={{fontSize: '.6em'}}>/ {itemData.temp.C}&deg;C</span>
-        </p>
+        {this.renderTemperature(itemData)}
         <span style={{fontSize: '1.5rem'}}>{itemData.wind.imperial} feet/s</span>
         {this.renderWindIcon(itemData.wind.imperial)}
       </div>

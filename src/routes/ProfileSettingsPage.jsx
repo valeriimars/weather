@@ -32,6 +32,8 @@ class ProfilePage extends React.Component {
     imageUrl: userImage,
     error: null,
     user: null,
+    temperatureUnits: '',
+    distanceUnits: '',
   };
 
   componentDidMount() {
@@ -46,6 +48,9 @@ class ProfilePage extends React.Component {
             const imageUrl = dataSnapshot.child('imageUrl').val();
             const workLocation = dataSnapshot.child('workLocation').val();
 
+            const temperatureUnits = dataSnapshot.child('temperatureUnits').val();
+            const distanceUnits = dataSnapshot.child('distanceUnits').val();
+
             this.setState({
               user,
               firstName,
@@ -53,6 +58,8 @@ class ProfilePage extends React.Component {
               homeLocation,
               imageUrl,
               workLocation,
+              temperatureUnits,
+              distanceUnits,
             });
           });
       } else {
@@ -74,7 +81,9 @@ class ProfilePage extends React.Component {
       lastName,
       homeLocation,
       imageUrl,
-      workLocation
+      workLocation,
+      temperatureUnits,
+      distanceUnits,
     } = this.state;
 
     getUserDatabaseById(this.state.user.uid)
@@ -84,6 +93,8 @@ class ProfilePage extends React.Component {
         homeLocation,
         imageUrl,
         workLocation,
+        temperatureUnits,
+        distanceUnits,
       });
   };
 
@@ -106,6 +117,15 @@ class ProfilePage extends React.Component {
       });
   };
 
+  handleSwitchChange = name => event => {
+    if (name === 'F') {
+      this.setState({temperatureUnits: event.target.checked ? 'F' : 'C' });
+    }
+    if (name === 'Feet') {
+      this.setState({distanceUnits: event.target.checked ? 'Feet' : 'Meters'})
+    }
+  };
+
   render() {
     if (!this.state.user) {
       return (
@@ -118,6 +138,7 @@ class ProfilePage extends React.Component {
     }
 
     const {error} = this.state;
+    console.log(this.state)
     return (
       <div className={styles.container}>
         <Paper elevation={23} style={{height: '100%'}}>
@@ -193,19 +214,21 @@ class ProfilePage extends React.Component {
                 <FormControlLabel
                   control={
                     <Switch
-                      checked={true}
-                      value="C"
+                      checked={this.state.temperatureUnits === 'F'}
+                      value="F"
                       color="primary"
+                      onChange={this.handleSwitchChange('F')}
                     />
                   }
-                  label="Temperature in Celcius&deg; "
+                  label="Temperature in Fahrenheits&deg; "
                 />
                   <FormControlLabel
                     control={
                       <Switch
-                        checked={true}
-                        value="F"
+                        checked={this.state.distanceUnits === 'Feet'}
+                        value="Feet"
                         color="primary"
+                        onChange={this.handleSwitchChange('Feet')}
                       />
                     }
                     label="Distance in Feet"

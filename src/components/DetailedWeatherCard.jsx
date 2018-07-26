@@ -18,6 +18,8 @@ class DetailedWeatherCard extends React.Component {
     weatherData: PropTypes.object,
     // forecastWeatherData is a data rendered at the bottom of the page with 3 hours period
     forecastWeatherData: PropTypes.array,
+    temperatureUnits: PropTypes.string,
+    distanceUnits: PropTypes.string,
   };
 
   static defaultProps = {
@@ -56,7 +58,7 @@ class DetailedWeatherCard extends React.Component {
     const Icon = getWeatherIcon(main);
     return (
       <div style={{fontSize: '2em', paddingTop: '10px', paddingBottom: '10px'}}>
-        <Icon />
+        <Icon/>
       </div>
     )
   };
@@ -69,15 +71,44 @@ class DetailedWeatherCard extends React.Component {
   };
 
   renderTemperatureForecast = (index) => {
+    console.log(this.props)
     const temperature = _.get(this.props.forecastWeatherData, `${index}.temp`);
-    const style = {margin: 0};
+    const style = {margin: 0}
+    if (this.props.temperatureUnits === 'F') {
+      return (
+        <div className={styles.miniFont}>
+          <p style={{...style, borderBottom: '1px solid black'}}><strong>{temperature.F}&deg; F</strong></p>
+          <p style={{...style}}>{temperature.C}&deg; C</p>
+        </div>
+      );
+    }
+    if (this.props.temperatureUnits === 'C') {
+      return (
+        <div className={styles.miniFont}>
+          <p style={{...style, borderBottom: '1px solid black'}}><strong>{temperature.C}&deg; C</strong></p>
+          <p style={{...style}}>{temperature.F}&deg; F</p>
+        </div>
+      );
+    }
+  };
+
+  renderMainTemperature = () => {
+    if (this.props.temperatureUnits === 'F') {
+      return (
+        <h4 style={{fontSize: '5rem', textAlign: 'center'}}>
+          {this.temperature().F}&deg; F
+          <p className={styles.secondaryTemperature}>{this.temperature().C} &deg; C</p>
+        </h4>
+      );
+    }
     return (
-      <div className={styles.miniFont}>
-        <p style={{...style, borderBottom: '1px solid black'}}>{temperature.F}&deg; F</p>
-        <p style={{...style}}>{temperature.C}&deg; C</p>
-      </div>
+      <h4 style={{fontSize: '5rem', textAlign: 'center'}}>
+        {this.temperature().C}&deg; C
+        <p className={styles.secondaryTemperature}>{this.temperature().F} &deg; F</p>
+      </h4>
     );
   };
+
 
   render() {
 
@@ -103,10 +134,7 @@ class DetailedWeatherCard extends React.Component {
             </Card>
             <div className={styles.row}>
               {this.renderMainIcon()}
-              <h4 style={{fontSize: '5rem', textAlign: 'center'}}>
-                {this.temperature().F}&deg; F
-                <p className={styles.secondaryTemperature}>{this.temperature().C} &deg; C</p>
-              </h4>
+              {this.renderMainTemperature()}
             </div>
             <Card className={styles.smallCard} elevation={10}>
               <div className={styles.row}>

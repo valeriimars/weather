@@ -7,7 +7,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import {createUserWithEmailAndPassword} from '../utils/authentication';
-import {createUser} from '../utils/db';
+import {createDBRecordForUser} from '../utils/db';
 import styles from './SignInPage.css';
 import {withRouter} from 'react-router-dom';
 
@@ -41,7 +41,7 @@ class SignUpPage extends React.Component {
 
     createUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
-        createUser(authUser.user.uid, username, email)
+        createDBRecordForUser(authUser.user.uid, username, email)
           .then(() => {
             this.setState({...INITIAL_STATE});
             history.push('/settings');

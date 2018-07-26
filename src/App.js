@@ -13,6 +13,14 @@ import {signOut} from './utils/authentication';
 import styles from './App.css';
 
 class App extends Component {
+
+  state = {
+    temperatureUnits: null,
+    distanceUnits: null,
+  };
+
+
+
   render() {
     return (
       <Router>

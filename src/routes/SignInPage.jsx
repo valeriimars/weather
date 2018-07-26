@@ -75,6 +75,7 @@ class SignInPage extends React.Component {
               <FormControl>
                 <InputLabel htmlFor="password">Password</InputLabel>
                 <Input
+                  type="password"
                   id="password"
                   onChange={event => this.setState(byPropName('password', event.target.value))}
                 />

@@ -13,7 +13,7 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import userImage from './assets/default-user.png';
-import {getUserById} from '../utils/db';
+import {getUserDatabaseById} from '../utils/db';
 import {auth, storage} from '../utils/firebase';
 import _ from 'lodash';
 
@@ -37,7 +37,7 @@ class ProfilePage extends React.Component {
   componentDidMount() {
     auth.onAuthStateChanged((user) => {
       if (user) {
-        getUserById(user.uid)
+        getUserDatabaseById(user.uid)
           .once('value')
           .then((dataSnapshot) => {
             const firstName = dataSnapshot.child('firstName').val();
@@ -77,7 +77,7 @@ class ProfilePage extends React.Component {
       workLocation
     } = this.state;
 
-    getUserById(this.state.user.uid)
+    getUserDatabaseById(this.state.user.uid)
       .set({
         firstName,
         lastName,
@@ -101,7 +101,7 @@ class ProfilePage extends React.Component {
           .getDownloadURL()
           .then((url) => {
             this.setState({imageUrl: url});
-            getUserById(this.state.user.uid).set({imageUrl: url});
+            getUserDatabaseById(this.state.user.uid).set({imageUrl: url});
           })
       });
   };

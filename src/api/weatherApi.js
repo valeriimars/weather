@@ -13,7 +13,7 @@ export class WeatherAPI {
    */
   static async byCityName(cityName) {
     const res =  await axios(
-      `http://api.openweathermap.org/data/2.5/forecast?q=${cityName},us&appid=${OPEN_WEATHER_KEY}`
+      `https://api.openweathermap.org/data/2.5/forecast?q=${cityName},us&appid=${OPEN_WEATHER_KEY}`
     );
     return await res.data;
   }

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {getForecast, getForecastSync} from '../utils/forecast';
 import _ from 'lodash';
 import DetailedWeatherCard from '../components/DetailedWeatherCard';
@@ -7,6 +8,10 @@ import {getUserDatabaseById} from "../utils/db";
 
 class ForecastPage extends React.Component {
 
+  static propTypes = {
+    searchTerm: PropTypes.string,
+  };
+
   state = {
     temperatureUnits: '',
     distanceUnits: '',
@@ -14,6 +19,16 @@ class ForecastPage extends React.Component {
     weatherData: [{}]
   };
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.searchTerm) {
+      const weatherPromise = getForecast(nextProps.searchTerm);
+      weatherPromise.then((data) => {
+        this.setState({
+          weatherData: data,
+        })
+      });
+    }
+  }
   componentDidMount() {
     auth.onAuthStateChanged((user) => {
       if (user) {
@@ -36,7 +51,7 @@ class ForecastPage extends React.Component {
               distanceUnits,
             });
 
-            const weatherPromise = getForecast(homeLocation);
+            const weatherPromise = getForecast(this.props.searchTerm || homeLocation);
             weatherPromise.then((data) => {
               this.setState({
                 weatherData: data,
@@ -52,13 +67,14 @@ class ForecastPage extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <DetailedWeatherCard
         temperatureUnits={this.state.temperatureUnits}
         distanceUnits={this.state.distanceUnits}
         weatherData={_.first(this.state.weatherData)}
         forecastWeatherData={_.slice(this.state.weatherData, 1)}
-        cityName={this.state.homeLocation}
+        cityName={this.props.searchTerm || this.state.homeLocation}
       />
     );
   }

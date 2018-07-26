@@ -18,6 +18,10 @@ export class WeatherAPI {
     return await res.data;
   }
 
+  // static async byCityName(cityName) {
+  //   return Promise.resolve(mockResponse)
+  // }
+
   static byCityNameSync() {
     return mockResponse;
   }

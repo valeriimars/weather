@@ -36,6 +36,11 @@ const styles = {
 };
 
 class NavigationBar extends React.Component {
+
+  static propTypes = {
+    onSearchSubmit: PropTypes.func,
+  };
+
   state = {
     isMenuOpen: false,
   };
@@ -53,7 +58,9 @@ class NavigationBar extends React.Component {
             <IconButton className={classes.menuButton} color="inherit" aria-label="Menu" onClick={this.toggleMenu}>
               <MenuIcon style={styles.icons}/>
             </IconButton>
-            <SearchInput styles={styles} />
+            <SearchInput
+              onSubmit={this.props.onSearchSubmit}
+              styles={styles}/>
           </Toolbar>
         </AppBar>
         <Drawer open={this.state.isMenuOpen} onClose={this.toggleMenu}>

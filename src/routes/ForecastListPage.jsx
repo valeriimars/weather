@@ -9,6 +9,7 @@ class ForecastListPage extends React.Component {
 
   static propTypes = {
     cityName: PropTypes.string,
+    searchTerm: PropTypes.string,
   };
 
   state = {
@@ -21,6 +22,17 @@ class ForecastListPage extends React.Component {
     temperatureUnits: '',
     distanceUnits: '',
   };
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.searchTerm) {
+      const weatherPromise = getForecast(nextProps.searchTerm);
+      weatherPromise.then((data) => {
+        this.setState({
+          weatherData: data,
+        })
+      });
+    }
+  }
 
   componentDidMount() {
     auth.onAuthStateChanged((user) => {
@@ -43,7 +55,7 @@ class ForecastListPage extends React.Component {
               temperatureUnits,
               distanceUnits,
             });
-            const weatherPromise = getForecast(homeLocation);
+            const weatherPromise = getForecast(this.props.searchTerm || homeLocation);
             weatherPromise.then((data) => {
               this.setState({
                 weatherData: data,
@@ -59,13 +71,13 @@ class ForecastListPage extends React.Component {
   }
 
   render() {
-
+    console.log(this.props)
     return (
       <ForecastList
         temperatureUnits={this.state.temperatureUnits}
         distanceUnits={this.state.distanceUnits}
         weatherDataList={this.state.weatherData}
-        cityName={this.state.homeLocation}
+        cityName={this.props.searchTerm || this.state.homeLocation}
       />
     );
   }

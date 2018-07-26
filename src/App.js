@@ -17,20 +17,27 @@ class App extends Component {
   state = {
     temperatureUnits: null,
     distanceUnits: null,
+    searchTerm: null,
   };
 
-
+  onSearchSubmit = (searchTerm) => {
+    this.setState({searchTerm})
+  };
 
   render() {
     return (
       <Router>
         <div>
-          <NavigationBar/>
+          <NavigationBar onSearchSubmit={this.onSearchSubmit}/>
           <div className={styles.container}>
-          <Switch>
-              <Route exact path="/" component={ForecastPage}/>
-              <Route path="/forecast" component={ForecastPage}/>
-              <Route path="/forecast-list" component={ForecastListPage}/>
+            <Switch>
+              <Route exact path="/" render={() => {
+                return <ForecastPage searchTerm={this.state.searchTerm}/>
+              }} />
+              <Route path="/forecast" render={() => {
+                return <ForecastPage searchTerm={this.state.searchTerm}/>
+              }} />
+              <Route path="/forecast-list" render={() => <ForecastListPage searchTerm={this.state.searchTerm}/>}/>
               <Route path="/settings" component={ProfileSettingsPage}/>
               <Route path="/signin" component={SignInPage}/>
               <Route path="/signup" component={SignUpPage}/>

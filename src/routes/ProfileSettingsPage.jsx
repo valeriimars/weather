@@ -139,7 +139,7 @@ class ProfilePage extends React.Component {
     const {error} = this.state;
     return (
       <div className={styles.container}>
-        <Paper elevation={23} style={{height: '100%'}}>
+        <Paper elevation={23} style={{}}>
           <div className={styles.cardLayout + " " + styles.column}>
             <Card>
               <div className={styles.column + " " + styles.header}>
